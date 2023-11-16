@@ -1,10 +1,10 @@
 import tkinter as tk
 from tkinter import ttk, filedialog
-from db_funk import DB as DB
 import os
 import shutil
 import subprocess
 import datetime
+from db_funk import DB as DB
 
 
 class Main(tk.Frame):
@@ -25,12 +25,12 @@ class Main(tk.Frame):
 
         self.img_upd = tk.PhotoImage(file="New Edit32.png")
         btn_edit_dialog = ttk.Button(toolbar, text="Редактировать", command=self.open_update_dialog,
-                                 compound=tk.TOP, image=self.img_upd)
+                                     compound=tk.TOP, image=self.img_upd)
         btn_edit_dialog.pack(side=tk.LEFT)
 
         self.img_del = tk.PhotoImage(file="New Remove32.png")
         btn_delete = ttk.Button(toolbar, text="Удалить позицию", command=self.delete_records,
-                                     compound=tk.TOP, image=self.img_del)
+                                compound=tk.TOP, image=self.img_del)
         btn_delete.pack(side=tk.LEFT)
 
         self.img_search = tk.PhotoImage(file="Find32.png")
@@ -40,7 +40,7 @@ class Main(tk.Frame):
 
         self.img_refresh = tk.PhotoImage(file="Refresh Green32.png")
         btn_refresh = ttk.Button(toolbar, text="Обновить", command=self.view_records,
-                                compound=tk.TOP, image=self.img_refresh)
+                                 compound=tk.TOP, image=self.img_refresh)
         btn_refresh.pack(side=tk.LEFT)
 
         self.tree = ttk.Treeview(self, columns=('ID', 'title', 'date_create', 'doc_type',
@@ -314,4 +314,5 @@ if __name__ == '__main__':
     root.geometry("865x650+300+200")
     root.resizable(True, True)
     # Запуск
+    root.mainloop()
     root.mainloop()
